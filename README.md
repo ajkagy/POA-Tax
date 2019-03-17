@@ -22,7 +22,7 @@ POA-Tax is a .NET CORE application that is built for POA Network based blockchai
 3. Build the program either in Visual Studio or run the provided release binaries.
 
 # Run binaries from the Release
-1. Download Binaries from Release (See [POA-Tools v1.1](https://github.com/ajkagy/POA-Tax/releases/tag/v1.0))
+1. Download Binaries from Release (See [POA-Tax v1.0](https://github.com/ajkagy/POA-Tax/releases/tag/v1.0))
 2. Open up a command prompt or bash prompt
 3. Navigate to the folder where you download the binaries.
 4. Run "dotnet POATax.dll" without the quotes

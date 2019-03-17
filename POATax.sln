@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POATax", "POATax\POATax.csproj", "{6699D834-7986-4A8A-B1C6-6F841B2F3055}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6699D834-7986-4A8A-B1C6-6F841B2F3055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6699D834-7986-4A8A-B1C6-6F841B2F3055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6699D834-7986-4A8A-B1C6-6F841B2F3055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6699D834-7986-4A8A-B1C6-6F841B2F3055}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFD787F2-21DD-466E-975F-0B58E41EB3C9}
+	EndGlobalSection
+EndGlobal

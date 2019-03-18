@@ -66,7 +66,10 @@ namespace POATax
                     worksheet.Cells["B" + worksheetindex.ToString()].Formula = "=SUM(B2:B" + (worksheetindex - 1).ToString() + ")";
                     worksheet.Cells["F" + worksheetindex.ToString()].Formula = "=SUM(F2:F" + (worksheetindex - 1).ToString() + ")";
                 }
-                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                if(!OperatingSystem.IsLinux())
+                {
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                }
                 string s = System.AppContext.BaseDirectory;
                 FileInfo excelFile = new FileInfo(@"" + address + "_POATax.xlsx");
 

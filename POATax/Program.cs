@@ -141,7 +141,11 @@ namespace POATax
                         Console.SetCursorPosition(0, 8);
                         Console.WriteLine("Transactions in database have been cleared. Press ENTER to continue.");
                         Console.ReadLine();
-                    } else if (xx == "")
+                    } else if (xx == "4")
+                    {
+                        break;
+                    }
+                    else if (xx == "")
                     {
 
                     }
@@ -160,6 +164,7 @@ namespace POATax
                     Console.WriteLine("1. Run taxes based on settings.json");
                     Console.WriteLine("2. Output excel Doc");
                     Console.WriteLine("3. Delete data in database");
+                    Console.WriteLine("4. Exit");
                     xx = Console.ReadLine();
                 }
 

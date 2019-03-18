@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="0x71300d93a8cdf93385af9635388cf2d00b95a480_POATax.xlsx" />
+    <None Remove="POATax.db" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CSC.EPPlus.Core" Version="1.5.4" />
     <PackageReference Include="LiteDB" Version="4.1.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />

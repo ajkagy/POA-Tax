@@ -54,19 +54,21 @@ namespace POATax
                 LiteCollection<POATax.DataStructures.Transactions> transactions = db.GetCollection<POATax.DataStructures.Transactions>("Transactions");
 
                 //Override startblock based on last transaction date in DB
-                var results = transactions.Find(Query.All("date", Query.Descending), limit: 1);
+              //  var results = transactions.Find(Query.All("date", Query.Descending), limit: 1);
+                var results = transactions.FindOne(Query.All(Query.Descending));
                 DateTime dtStartDate = DateTime.ParseExact(Configuration["Starting Date"], "MM-dd-yyyy", provider);
-                foreach (Transactions t in results)
+                if(results != null)
                 {
-                    if (dtStartDate < t.date)
+                    if (dtStartDate < results.date)
                     {
-                        double dayDifference = (t.date - inception).TotalDays;
-                        dayDifference = dayDifference - 1;
+                        double dayDifference = (results.date - inception).TotalDays;
+                        dayDifference = dayDifference - 2;
                         startBlock = Convert.ToInt32(dayDifference) * 17280;
+
+                        var col = db.GetCollection<Transactions>("Transactions");
+                        col.Delete(x => x.date >= results.date);
                     }
                 }
-
-
 
                 if (startBlock == 0)
                 {
@@ -112,7 +114,7 @@ namespace POATax
                                     //New Day. Put accumulated rewards in the DB and reset
                                     if (Convert.ToInt32(Configuration["Tax Year"]) == dt.Year)
                                     {
-                                        var find = transactions.Find(x => x.date == dt);
+                                        var find = transactions.Find(x => x.date == CurrentDate);
                                         if (find.Count() == 0)
                                         {
                                             var t = new POATax.DataStructures.Transactions

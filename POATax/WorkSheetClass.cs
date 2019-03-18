@@ -71,7 +71,7 @@ namespace POATax
                 FileInfo excelFile = new FileInfo(@"" + address + "_POATax.xlsx");
 
                 excel.SaveAs(excelFile);
-                Console.WriteLine("Excel Document has been generated");
+                Console.WriteLine("Excel Document has been generated. Press ENTER to continue.");
             }
         }
     }

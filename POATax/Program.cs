@@ -110,22 +110,11 @@ namespace POATax
                     Console.ReadLine();
                 }
 
-                Console.Clear();
-                Console.SetCursorPosition(0, 0);
-                WriteTitle();
-                Console.WriteLine("Input a number from the Menu:");
-                Console.WriteLine("1. Run taxes based on settings.json    !!!! This will delete transactions in the db file");
-                Console.WriteLine("2. Output excel Doc");
                 string xx = "";
-                do
+                while (true)
                 {
-                    xx = Console.ReadLine();
                     if (xx == "1")
                     {
-                        using (var db = new LiteDatabase(@"POATax.db"))
-                        {
-                            db.DropCollection("Transactions");
-                        }
                         Console.Clear();
                         WriteTitle();
                         Console.SetCursorPosition(0, 8);
@@ -134,23 +123,45 @@ namespace POATax
                         Console.SetCursorPosition(0, 8);
                         WorkSheetClass ws = new WorkSheetClass();
                         ws.GenerateExcelWorkSheet(Configuration["Mining Address"]);
-                        break;
+                        Console.ReadLine();
                     }
                     else if (xx == "2")
                     {
                         WorkSheetClass ws = new WorkSheetClass();
                         ws.GenerateExcelWorkSheet(Configuration["Mining Address"]);
+                        Console.ReadLine();
+                    } else if (xx == "3")
+                    {
+                        Console.Clear();
+                        using (var db = new LiteDatabase(@"POATax.db"))
+                        {
+                            db.DropCollection("Transactions");
+                        }
+                        WriteTitle();
+                        Console.SetCursorPosition(0, 8);
+                        Console.WriteLine("Transactions in database have been cleared. Press ENTER to continue.");
+                        Console.ReadLine();
+                    } else if (xx == "")
+                    {
+
                     }
                     else
                     {
-                        Console.WriteLine("Error: Invalid selection");
+                        Console.WriteLine("Error: Invalid selection. Press ENTER to continue");
                         Console.SetCursorPosition(0, 11);
                         Console.Write(new string(' ', Console.WindowWidth));
                         Console.SetCursorPosition(0, 11);
+                        Console.ReadLine();
                     }
-                } while (xx != "1" && xx != "2");
-
-                Console.ReadLine();
+                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
+                    WriteTitle();
+                    Console.WriteLine("Input a number from the Menu:");
+                    Console.WriteLine("1. Run taxes based on settings.json");
+                    Console.WriteLine("2. Output excel Doc");
+                    Console.WriteLine("3. Delete data in database");
+                    xx = Console.ReadLine();
+                }
 
             }
             catch (Exception ex)

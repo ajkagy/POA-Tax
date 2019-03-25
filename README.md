@@ -14,7 +14,7 @@ POA-Tax is a .NET CORE application that is built for POA Network based blockchai
 1. Open settings.json file and fill in the following infomation
     - RPC is defaulted to localhost. Leave this alone unless your rpc port is different for your local parity instance
     - Starting Block (optional): Leave empty string if unsure
-    - Starting Date: starting date from which you want the app to run, format: MM-DD-YYYY
+    - Starting Date: starting date from which you want the app to run (This will override the starting block), format: MM-DD-YYYY
     - Mining Address: The Mining Address of the Validator
     - Tax Year: The year in which you want to pull transactions for mining rewards.
 
@@ -22,7 +22,7 @@ POA-Tax is a .NET CORE application that is built for POA Network based blockchai
 3. Build the program either in Visual Studio or run the provided release binaries.
 
 # Run binaries from the Release
-1. Download Binaries from Release (See [POA-Tax v2.1](https://github.com/ajkagy/POA-Tax/releases/tag/v2.1))
+1. Download Binaries from Release (See [POA-Tax v2.2](https://github.com/ajkagy/POA-Tax/releases/tag/v2.2))
 2. Open up a command prompt or bash prompt
 3. Navigate to the folder where you download the binaries.
 4. Run "dotnet POATax.dll" without the quotes

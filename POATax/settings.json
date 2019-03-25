@@ -1,7 +1,7 @@
 ﻿{
   "RPC": "http://localhost:8545",
   "Starting Block": 500000,
-  "Starting Date": "04-24-2018",
-  "Mining Address": "0x71300d93a8cdf93385af9635388cf2d00b95a480",
+  "Starting Date": "01-01-2018",
+  "Mining Address": "0x49bbdebd7f3d39f297135d7af3831ce152a99b67",
   "Tax Year": 2018
 }

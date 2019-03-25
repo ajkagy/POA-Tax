@@ -44,6 +44,7 @@ namespace POATax
 
             WriteStatus("Starting Transaction Search...");
             List<Transaction> transactionList = new List<Transaction>();
+            List<string> blockMiners = new List<string>();
 
             var web3 = new Nethereum.Web3.Web3(Configuration["RPC"]);
             var b = 1;
@@ -97,7 +98,7 @@ namespace POATax
                             CurrentDate = DateTime.Parse(dt.ToString("MM/dd/yyyy", provider));
                         }
 
-                        if (block.Miner == Configuration["Mining Address"])
+                        if (block.Miner.ToLower() == Configuration["Mining Address"].ToLower())
                         {
                             try
                             {
